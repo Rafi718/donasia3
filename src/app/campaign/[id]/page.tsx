@@ -19,7 +19,7 @@ const mockCampaignsData: { [key: string]: CampaignDetail } = {
   '1': {
     id: '1',
     title: "Bantu Reyhan Pulih Bisa Melihat Bicara Dan Jalan",
-    imageUrl: "https://images.unsplash.com/photo-1516020034232-764e0078e398?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlsZCUyMG1lZGljYWwlMjBjYXJlfGVufDB8fHx8MTczOTY2NTg3MXww&fit=crop&w=1200&h=500&q=80",
+    imageUrl: "/don1.png",
     imageHint: "child medical care",
     views: 3891,
     category: "Kesehatan",

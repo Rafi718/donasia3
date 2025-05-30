@@ -10,6 +10,7 @@ const nextConfig: NextConfig = {
     ignoreDuringBuilds: true,
   },
   images: {
+     domains: ['loremflickr.com'],
     remotePatterns: [
       {
         protocol: 'https',
