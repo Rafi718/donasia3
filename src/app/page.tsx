@@ -3,17 +3,18 @@ import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowUp, Info } from 'lucide-react';
-import PopularCampaigns from '@/components/popular-campaigns'; 
+import PopularCampaigns from '@/components/popular-campaigns';
+import StoryGenerator from '@/components/story-generator'; // Impor komponen StoryGenerator
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-[calc(100vh-var(--header-height,80px))]">
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 md:py-20 flex-grow">
-        <div className="flex flex-col md:flex-row gap-8 lg:gap-12 items-start"> {/* Changed to row layout on md screens */}
+        <div className="flex flex-col md:flex-row gap-8 lg:gap-12 items-start">
 
           {/* Left Column: Text Content */}
-          <div className="flex flex-col gap-8 md:w-1/2 lg:max-w-2xl">
+          <div className="flex flex-col gap-8 md:w-1/2 lg:max-w-2xl items-start text-left">
             {/* Text part 1 (H2, H1, P) */}
             <div className="flex flex-col items-start text-left w-full">
               <h2 className="text-sm md:text-base font-semibold text-primary uppercase tracking-wider mb-2">
@@ -28,7 +29,7 @@ export default function Home() {
             </div>
 
             {/* Text part 2 (Button, App Badges) */}
-            <div className="flex flex-col items-start w-full">
+            <div className="flex flex-col items-start w-full mt-8 md:mt-0"> {/* Adjusted margin for consistency */}
               <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 text-base md:text-lg py-3 px-8 shadow-md rounded-lg mb-8 transition-transform hover:scale-105">
                 <Link href="/donate">
                   Donasi Sekarang
@@ -99,11 +100,11 @@ export default function Home() {
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="order-last md:order-first">
-              <Image 
+              <Image
                 src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwZGlzY3Vzc2lvbnxlbnwwfHx8fDE3Mzk2NjU4Mjd8MA&fit=crop&w=600&h=450&q=80"
-                alt="Tim Donasia.com berdiskusi" 
-                width={600} 
-                height={450} 
+                alt="Tim Donasia.com berdiskusi"
+                width={600}
+                height={450}
                 className="rounded-xl shadow-xl object-cover w-full"
                 data-ai-hint="team discussion"
               />
@@ -128,6 +129,9 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Story Generator Section */}
+      <StoryGenerator /> {/* Menambahkan komponen Pembuat Cerita AI di sini */}
 
       {/* Scroll to Top Button */}
       <Link href="#top" className="fixed bottom-6 right-6 bg-primary text-primary-foreground p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all z-50">
