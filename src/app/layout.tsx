@@ -17,10 +17,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Charity Hub - Galang Dana Penuh Harapan',
-  description: 'Platform donasi untuk mendukung berbagai kampanye sosial dan kemanusiaan.',
+  title: 'Atapkita.com - Galang Dana dan Donasi Online Terbesar',
+  description: 'Platform galang dana dan donasi online. Kita Mereka Berkumpul di Satu #Atapkita.',
   icons: {
-    icon: '/favicon.ico', // Assuming a favicon might be added later
+    icon: '/favicon.ico', 
   },
 };
 
@@ -30,10 +30,10 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="id">
-      <body className={cn(geistSans.variable, geistMono.variable, "antialiased flex flex-col min-h-screen")}>
+    <html lang="id" id="top">
+      <body className={cn(geistSans.variable, geistMono.variable, "antialiased flex flex-col min-h-screen bg-background")}>
         <Header />
-        <main className="flex-grow container mx-auto px-4 py-8">
+        <main className="flex-grow">
           {children}
         </main>
         <Footer />

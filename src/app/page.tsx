@@ -1,68 +1,94 @@
-import FeaturedCampaigns from '@/components/featured-campaigns';
-import DonationTiers from '@/components/donation-tiers';
-import StoryGenerator from '@/components/story-generator';
-import ImpactStatistics from '@/components/impact-statistics';
 import { Button } from '@/components/ui/button';
-import Link from 'next/link';
-import { ArrowRight, Gift } from 'lucide-react';
 import Image from 'next/image';
+import Link from 'next/link';
+import { ArrowUp } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div className="flex flex-col gap-12 md:gap-16">
+    <div className="flex flex-col min-h-[calc(100vh-var(--header-height,80px))]"> {/* Adjust header height if necessary */}
       {/* Hero Section */}
-      <section className="py-16 md:py-24 text-center bg-gradient-to-br from-primary/30 via-background to-background">
-        <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
-            <Gift className="h-16 w-16 text-accent mx-auto mb-6 animate-bounce" />
-            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold mb-6 text-primary">
-              Ulurkan Tangan, Sebarkan Harapan
+      <section className="container mx-auto px-4 py-12 md:py-20 flex-grow">
+        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+          {/* Left Column: Text Content */}
+          <div className="flex flex-col items-start text-left">
+            <h2 className="text-sm md:text-base font-semibold text-primary uppercase tracking-wider mb-2">
+              Galang Dana dan Donasi Online Terbesar
+            </h2>
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-extrabold mb-4 text-foreground leading-tight">
+              Kita Mereka Berkumpul di <span className="whitespace-nowrap">Satu #</span><span className="text-primary whitespace-nowrap">Atapkita</span>
             </h1>
-            <p className="text-lg md:text-xl text-foreground mb-10">
-              Bersama Charity Hub, setiap donasi Anda membawa perubahan nyata. Mari bantu mereka yang membutuhkan dan ciptakan dampak positif berkelanjutan.
+            <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-lg">
+              Galang dana dan donasi online kini semakin mudah dilakukan dimanapun dan kapanpun.
             </p>
-            <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg py-3 px-8 shadow-lg transition-transform hover:scale-105 duration-300">
+            <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 text-base md:text-lg py-3 px-8 shadow-md rounded-lg mb-8 transition-transform hover:scale-105">
               <Link href="/donate">
-                Donasi Sekarang <ArrowRight className="ml-2 h-5 w-5" />
+                Donasi Sekarang
               </Link>
             </Button>
+            
+            <div className="mt-4">
+              <p className="text-sm font-medium text-foreground mb-3">Download Aplikasi Atapkita</p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="#" aria-label="Get it on Google Play">
+                  <Image src="https://placehold.co/135x40.png?text=Google+Play" alt="Google Play" width={135} height={40} className="rounded" data-ai-hint="google play store" />
+                </Link>
+                <Link href="#" aria-label="Download on the App Store">
+                  <Image src="https://placehold.co/135x40.png?text=App+Store" alt="App Store" width={135} height={40} className="rounded" data-ai-hint="apple app store" />
+                </Link>
+                <Link href="#" aria-label="Explore it on AppGallery">
+                  <Image src="https://placehold.co/135x40.png?text=AppGallery" alt="AppGallery" width={135} height={40} className="rounded" data-ai-hint="huawei appgallery" />
+                </Link>
+              </div>
+            </div>
           </div>
-          <div className="mt-12 relative w-full max-w-4xl mx-auto h-64 md:h-96 rounded-xl overflow-hidden shadow-2xl">
-            <Image
-              src="https://placehold.co/1000x600.png"
-              alt="Kegiatan amal"
-              fill
-              style={{objectFit: 'cover'}}
-              priority
-              data-ai-hint="community help"
-              className="transform transition-all duration-500 hover:scale-105"
-            />
-             <div className="absolute inset-0 bg-black/30 flex items-center justify-center">
-              <p className="text-white text-2xl md:text-3xl font-semibold p-4 bg-black/50 rounded">Membangun Masa Depan Lebih Baik, Bersama.</p>
+
+          {/* Right Column: Image Gallery */}
+          <div className="relative h-[400px] md:h-[550px] lg:h-[600px] order-first md:order-last">
+            {/* Main Image */}
+            <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[60%] md:w-[280px] lg:w-[320px] h-auto z-10">
+              <Image
+                src="https://placehold.co/400x600.png"
+                alt="Anak tersenyum"
+                width={400}
+                height={600}
+                className="rounded-3xl shadow-2xl object-cover aspect-[2/3]"
+                priority
+                data-ai-hint="child smiling"
+              />
+            </div>
+            {/* Top smaller image */}
+            <div className="absolute top-[10%] left-[5%] md:top-[5%] md:left-0 w-[45%] md:w-[200px] lg:w-[240px] h-auto">
+              <Image
+                src="https://placehold.co/300x200.png"
+                alt="Anak-anak bermain"
+                width={300}
+                height={200}
+                className="rounded-3xl shadow-xl object-cover aspect-[3/2]"
+                data-ai-hint="children playing"
+              />
+            </div>
+             {/* Bottom smaller image */}
+            <div className="absolute bottom-[5%] right-[5%] md:bottom-[10%] md:right-0 w-[55%] md:w-[260px] lg:w-[300px] h-auto">
+              <Image
+                src="https://placehold.co/400x250.png"
+                alt="Kelompok anak-anak"
+                width={400}
+                height={250}
+                className="rounded-3xl shadow-xl object-cover aspect-[16/10]"
+                data-ai-hint="children group"
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <FeaturedCampaigns />
-      <DonationTiers />
-      <ImpactStatistics />
-      <StoryGenerator />
-
-      {/* Final Call to Action Section */}
-      <section className="py-12 md:py-16 bg-primary text-primary-foreground">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-3xl md:text-4xl font-bold mb-6">Siapapun Bisa Jadi Pahlawan</h2>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto">
-            Sekecil apapun donasi Anda, akan sangat berarti bagi mereka. Bergabunglah dengan ribuan donatur lainnya dan jadilah bagian dari perubahan.
-          </p>
-          <Button size="lg" variant="secondary" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg py-3 px-8 shadow-lg transition-transform hover:scale-105 duration-300">
-            <Link href="/donate">
-              Mulai Berdonasi <Gift className="ml-2 h-5 w-5" />
-            </Link>
-          </Button>
-        </div>
-      </section>
+      {/* Scroll to Top Button */}
+      {/* This would typically be a client component with state to show/hide based on scroll position */}
+      {/* For now, a simple fixed button */}
+      <Link href="#top" className="fixed bottom-6 right-6 bg-primary text-primary-foreground p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all z-50">
+        <ArrowUp className="h-6 w-6" />
+        <span className="sr-only">Scroll to top</span>
+      </Link>
     </div>
   );
 }

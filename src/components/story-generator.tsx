@@ -84,7 +84,7 @@ export default function StoryGenerator() {
   return (
     <section id="story-generator" className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
-        <Card className="max-w-2xl mx-auto shadow-xl">
+        <Card className="max-w-2xl mx-auto shadow-xl border">
           <CardHeader className="text-center">
             <div className="inline-block p-3 bg-primary/10 rounded-full mb-3 mx-auto">
              <Wand2 className="h-10 w-10 text-primary" />
@@ -102,11 +102,11 @@ export default function StoryGenerator() {
                   name="facts"
                   render={({ field }) => (
                     <FormItem>
-                      <FormLabel className="text-lg font-medium">Fakta Kampanye</FormLabel>
+                      <FormLabel className="text-lg font-medium text-foreground">Fakta Kampanye</FormLabel>
                       <FormControl>
                         <Textarea
                           placeholder="Contoh: Kami ingin mengumpulkan dana untuk membeli 100 selimut bagi korban banjir di desa X. Bantuan ini sangat mendesak karena musim dingin akan tiba."
-                          className="min-h-[120px] resize-none focus:ring-accent focus:border-accent"
+                          className="min-h-[120px] resize-none focus:ring-accent focus:border-accent bg-background border-border text-foreground"
                           {...field}
                         />
                       </FormControl>
@@ -134,7 +134,7 @@ export default function StoryGenerator() {
             <CardFooter className="flex flex-col gap-4 pt-6">
               <h3 className="text-xl font-semibold text-primary">Hasil Cerita:</h3>
               {generatedStories.map((story, index) => (
-                <Alert key={index} variant="default" className="bg-secondary/50 relative group">
+                <Alert key={index} variant="default" className="bg-muted/50 relative group border-border">
                    <Wand2 className="h-5 w-5 text-accent" />
                   <AlertTitle className="font-medium text-primary">Opsi Cerita {index + 1}</AlertTitle>
                   <AlertDescription className="text-foreground whitespace-pre-wrap">
@@ -143,7 +143,7 @@ export default function StoryGenerator() {
                   <Button
                     variant="ghost"
                     size="icon"
-                    className="absolute top-2 right-2 opacity-50 group-hover:opacity-100 transition-opacity"
+                    className="absolute top-2 right-2 opacity-50 group-hover:opacity-100 transition-opacity text-muted-foreground hover:text-foreground"
                     onClick={() => handleCopyToClipboard(story, index)}
                     aria-label="Salin cerita"
                   >
