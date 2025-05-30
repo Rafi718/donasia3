@@ -60,7 +60,7 @@ export default function Home() {
             {/* Top smaller image */}
             <div className="absolute top-[10%] left-[5%] md:top-[5%] md:left-0 w-[45%] md:w-[200px] lg:w-[240px] h-auto">
               <Image
-                src="https://placehold.co/300x200.png"
+                src="https://images.unsplash.com/photo-1532629345422-7515f3d16bb6?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwzfHxkb25hdGlvbnxlbnwwfHx8fDE3NDg2MDQ0MjF8MA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Relawan membantu sesama"
                 width={300}
                 height={200}
@@ -71,7 +71,7 @@ export default function Home() {
              {/* Bottom smaller image */}
             <div className="absolute bottom-[5%] right-[5%] md:bottom-[10%] md:right-0 w-[55%] md:w-[260px] lg:w-[300px] h-auto">
               <Image
-                src="https://placehold.co/400x250.png"
+                src="https://images.unsplash.com/photo-1561414927-6d86591d0c4f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHw4fHxkb25hdGlvbnxlbnwwfHx8fDE3NDg2MDQ0MjF8MA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Komunitas bergotong royong"
                 width={400}
                 height={250}
