@@ -6,13 +6,13 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { UserCircle2 } from 'lucide-react'; // Changed from UserCircle2 to UserCircle2
+import { UserCircle2 } from 'lucide-react'; 
 
 type Campaign = {
   id: number;
   title: string;
   category: string;
-  categoryColor: string; // Tailwind CSS class for background, e.g., 'bg-orange-100 text-orange-700'
+  categoryColor: string; 
   imageUrl: string;
   imageHint: string;
   goal: number;
@@ -28,7 +28,7 @@ const campaigns: Campaign[] = [
     title: "Bantu Reyhan Pulih Bisa Melihat Bicara Dan Jalan",
     category: "Kesehatan",
     categoryColor: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "https://images.unsplash.com/photo-1516020034232-764e0078e398?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlsZCUyMG1lZGljYWwlMjBjYXJlfGVufDB8fHx8MTczOTY2NTg3MXww&fit=crop&w=600&h=400&q=80",
     imageHint: "child medical care",
     goal: 50000000,
     raised: 3681405,
@@ -40,7 +40,7 @@ const campaigns: Campaign[] = [
     title: "Tolong Bantu Anak Yatim Piatu Di Panti Asuhan",
     category: "Panti Sosial",
     categoryColor: "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "https://images.unsplash.com/photo-1599056000514-e668956f5590?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxvcnBoYW5hZ2UlMjBjaGlsZHJlbnxlbnwwfHx8fDE3Mzk2NjU4OTB8MA&fit=crop&w=600&h=400&q=80",
     imageHint: "orphanage children",
     goal: 10000000,
     raised: 729000,
@@ -52,7 +52,7 @@ const campaigns: Campaign[] = [
     title: "Seribu Harapan Untuk Anak-anak Panti Asuhan",
     category: "Panti Sosial",
     categoryColor: "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "https://images.unsplash.com/photo-1484609099334-a65003979064?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlsZHJlbiUyMGhvcGV8ZW58MHx8fHwxNzM5NjY1OTA5fDA&fit=crop&w=600&h=400&q=80",
     imageHint: "children hope",
     goal: 20000000,
     raised: 1208126,
@@ -64,7 +64,7 @@ const campaigns: Campaign[] = [
     title: "Tempat Tinggal Panti Asuhan Jernih Balaki Di...",
     category: "Panti Sosial",
     categoryColor: "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "https://images.unsplash.com/photo-1582099012945-c329a0022011?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxvcnBoYW5hZ2UlMjBidWlsZGluZ3xlbnwwfHx8fDE3Mzk2NjU5Mjh8MA&fit=crop&w=600&h=400&q=80",
     imageHint: "orphanage building",
     goal: 5000000,
     raised: 48098,
@@ -76,7 +76,7 @@ const campaigns: Campaign[] = [
     title: "Sedekah untuk Pendidikan Anak Dhuafa",
     category: "Sedekah",
     categoryColor: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxlZHVjYXRpb24lMjBjaGFyaXR5fGVufDB8fHx8MTczOTY2NTk0N3ww&fit=crop&w=600&h=400&q=80",
     imageHint: "education charity",
     goal: 15000000,
     raised: 8500000,
@@ -88,7 +88,7 @@ const campaigns: Campaign[] = [
     title: "Zakat Maal untuk Kesejahteraan Umat",
     category: "Lainnya",
     categoryColor: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
-    imageUrl: "https://placehold.co/600x400.png",
+    imageUrl: "https://images.unsplash.com/photo-1585099519737-905923699836?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx6YWthdCUyMGNoYXJpdHl8ZW58MHx8fHwxNzM5NjY1OTY2fDA&fit=crop&w=600&h=400&q=80",
     imageHint: "zakat charity",
     goal: 100000000,
     raised: 65000000,
@@ -120,6 +120,7 @@ export default function PopularCampaigns() {
                     style={{ objectFit: 'cover' }}
                     className="rounded-t-xl cursor-pointer"
                     data-ai-hint={campaign.imageHint}
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
                   />
                 </Link>
                 <Badge variant="secondary" className={`absolute top-3 left-3 px-2 py-1 text-xs font-semibold rounded-md border-0 ${campaign.categoryColor}`}>

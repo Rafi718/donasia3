@@ -34,7 +34,21 @@ export default function Home() {
                 Donasi Sekarang
               </Link>
             </Button>
-            
+             {/* App Download Badges - Kept as placehold.co as specific assets are better */}
+            <div className="mt-4">
+              <p className="text-sm font-medium text-foreground mb-3">Download Aplikasi Donasia</p>
+              <div className="flex flex-wrap gap-3">
+                <Link href="#" aria-label="Get it on Google Play">
+                  <Image src="https://placehold.co/135x40.png?text=Google+Play" alt="Google Play" width={135} height={40} className="rounded" data-ai-hint="google play store" />
+                </Link>
+                <Link href="#" aria-label="Download on the App Store">
+                  <Image src="https://placehold.co/135x40.png?text=App+Store" alt="App Store" width={135} height={40} className="rounded" data-ai-hint="apple app store" />
+                </Link>
+                <Link href="#" aria-label="Explore it on AppGallery">
+                  <Image src="https://placehold.co/135x40.png?text=AppGallery" alt="AppGallery" width={135} height={40} className="rounded" data-ai-hint="huawei appgallery" />
+                </Link>
+              </div>
+            </div>
           </div>
 
           {/* Image Gallery Block (now after button and app badges) */}
@@ -86,7 +100,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
             <div className="order-last md:order-first">
               <Image 
-                src="https://placehold.co/600x450.png" 
+                src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwZGlzY3Vzc2lvbnxlbnwwfHx8fDE3Mzk2NjU4Mjd8MA&fit=crop&w=600&h=450&q=80"
                 alt="Tim Donasia.com berdiskusi" 
                 width={600} 
                 height={450} 

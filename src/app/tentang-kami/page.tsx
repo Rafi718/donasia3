@@ -1,3 +1,4 @@
+
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -8,7 +9,7 @@ export default function TentangKamiPage() {
       <div className="max-w-3xl mx-auto text-center">
         <h1 className="text-4xl font-bold mb-6 text-primary">Tentang Donasia.com</h1>
         <Image 
-          src="https://placehold.co/800x400.png" 
+          src="https://images.unsplash.com/photo-1522071820081-009f0129c7da?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHx0ZWFtJTIwY29sbGFib3JhdGlvbnxlbnwwfHx8fDE3Mzk2NjU4NDl8MA&fit=crop&w=800&h=400&q=80"
           alt="Tim Donasia.com" 
           width={800} 
           height={400} 

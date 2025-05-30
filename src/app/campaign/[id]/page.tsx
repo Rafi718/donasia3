@@ -10,7 +10,7 @@ import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
-import { Eye, Tag, MapPin, Bookmark, Share2, MoreHorizontal, ArrowLeft, UserCircle2 } from 'lucide-react'; // Added UserCircle2
+import { Eye, Tag, MapPin, Bookmark, Share2, MoreHorizontal, ArrowLeft, UserCircle2 } from 'lucide-react'; 
 import { formatDistanceToNowStrict, parseISO } from 'date-fns';
 import { id as localeId } from 'date-fns/locale';
 
@@ -19,7 +19,7 @@ const mockCampaignsData: { [key: string]: CampaignDetail } = {
   '1': {
     id: '1',
     title: "Bantu Reyhan Pulih Bisa Melihat Bicara Dan Jalan",
-    imageUrl: "https://placehold.co/1200x500.png",
+    imageUrl: "https://images.unsplash.com/photo-1516020034232-764e0078e398?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxjaGlsZCUyMG1lZGljYWwlMjBjYXJlfGVufDB8fHx8MTczOTY2NTg3MXww&fit=crop&w=1200&h=500&q=80",
     imageHint: "child medical care",
     views: 3891,
     category: "Kesehatan",
@@ -31,7 +31,8 @@ const mockCampaignsData: { [key: string]: CampaignDetail } = {
     endDate: "2024-12-31", 
     organizer: {
       name: "Aina Hernita",
-      avatarUrl: "https://placehold.co/100x100.png?text=AH" // Placeholder avatar
+      avatarUrl: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-4.0.3&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwxfHxwcm9maWxlJTIwcGxhY2Vob2xkZXJ8ZW58MHx8fHwxNzM5NjY2MzIwfDA&fit=crop&w=100&h=100&q=80",
+      avatarHint: "profile woman"
     },
     news: [
       { id: 'n1', title: "Kondisi Reyhan Membaik", date: "2024-09-15", content: "Setelah mendapatkan perawatan awal, kondisi Reyhan menunjukkan sedikit perbaikan..." },
@@ -62,6 +63,7 @@ type CampaignDetail = {
   organizer: {
     name: string;
     avatarUrl?: string;
+    avatarHint?: string;
   };
   news: Array<{ id: string; title: string; date: string; content: string }>;
   donors: Array<{ id: string; name: string; amount: number; date: string; isAnonymous: boolean }>;
@@ -108,6 +110,7 @@ export default function CampaignDetailPage() {
                   priority
                   style={{ objectFit: 'cover' }}
                   data-ai-hint={campaign.imageHint}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 />
               </div>
               <CardContent className="p-6">
@@ -147,7 +150,6 @@ export default function CampaignDetailPage() {
                   </TabsContent>
                   <TabsContent value="berita">
                     <CardDescription>Berita terbaru akan ditampilkan di sini.</CardDescription>
-                    {/* Placeholder for news items */}
                      <div className="space-y-4 mt-4">
                         {campaign.news.map(item => (
                             <div key={item.id} className="p-3 border rounded-md bg-background/50">
@@ -160,7 +162,6 @@ export default function CampaignDetailPage() {
                   </TabsContent>
                   <TabsContent value="donatur">
                     <CardDescription>Daftar donatur (yang tidak anonim) akan ditampilkan di sini.</CardDescription>
-                     {/* Placeholder for donor list */}
                      <div className="space-y-2 mt-4">
                         {campaign.donors.filter(d => !d.isAnonymous).slice(0, 5).map(donor => ( // Show first 5 non-anonymous
                             <div key={donor.id} className="flex justify-between items-center p-2 border-b text-sm">
@@ -213,7 +214,7 @@ export default function CampaignDetailPage() {
               </CardHeader>
               <CardContent className="flex items-center gap-3">
                 <Avatar className="h-12 w-12">
-                  {campaign.organizer.avatarUrl ? <AvatarImage src={campaign.organizer.avatarUrl} alt={campaign.organizer.name} /> : null}
+                  {campaign.organizer.avatarUrl ? <AvatarImage src={campaign.organizer.avatarUrl} alt={campaign.organizer.name} data-ai-hint={campaign.organizer.avatarHint} /> : null}
                   <AvatarFallback className="bg-primary text-primary-foreground">
                     {campaign.organizer.name.substring(0, 2).toUpperCase()}
                   </AvatarFallback>
