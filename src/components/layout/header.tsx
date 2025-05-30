@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { HeartHandshake, Menu } from 'lucide-react';
-import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
+import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 
 export default function Header() {
   const navItems = [
@@ -39,7 +39,10 @@ export default function Header() {
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="bg-background w-[250px] sm:w-[300px]">
-              <nav className="flex flex-col space-y-4 pt-8">
+              <SheetHeader>
+                <SheetTitle className="sr-only">Menu Utama</SheetTitle>
+              </SheetHeader>
+              <nav className="flex flex-col space-y-4">
                 {navItems.map((item) => (
                   <Button key={item.label} variant="ghost" asChild className="text-foreground hover:bg-secondary w-full justify-start text-lg">
                     <Link href={item.href}>{item.label}</Link>
