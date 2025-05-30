@@ -1,3 +1,4 @@
+
 'use client';
 
 import { useState } from 'react';
@@ -19,8 +20,6 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
-// This component is currently not used on the main page after the redesign.
-// It is kept here for potential future use.
 export default function StoryGenerator() {
   const [generatedStories, setGeneratedStories] = useState<string[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -53,11 +52,19 @@ export default function StoryGenerator() {
           variant: "destructive",
         });
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error("Error generating story:", error);
+      let toastTitle = "Terjadi Kesalahan";
+      let toastDescription = "Gagal membuat cerita. Mohon coba lagi nanti.";
+
+      if (error.message && (error.message.includes('503') || error.message.toLowerCase().includes('model is overloaded') || error.message.toLowerCase().includes('service unavailable'))) {
+        toastTitle = "Model AI Sibuk";
+        toastDescription = "Model AI saat ini sedang sibuk atau tidak tersedia. Silakan coba lagi setelah beberapa saat.";
+      }
+      
       toast({
-        title: "Terjadi Kesalahan",
-        description: "Gagal membuat cerita. Mohon coba lagi nanti.",
+        title: toastTitle,
+        description: toastDescription,
         variant: "destructive",
       });
     } finally {
@@ -160,3 +167,4 @@ export default function StoryGenerator() {
     </section>
   );
 }
+
