@@ -24,7 +24,7 @@ export default function Header() {
   return (
     
     <header className="bg-background text-foreground shadow-sm sticky top-0 z-50 border-b">
-       <div className="bg-indigo-600">
+       {/* <div className="bg-indigo-600">
             <div className="max-w-screen-xl mx-auto px-4 py-3 flex items-start justify-between text-white md:px-8">
                 <div className="flex gap-x-4">
                     <div className="w-10 h-10 flex-none rounded-lg bg-indigo-800 flex items-center justify-center">
@@ -42,7 +42,7 @@ export default function Header() {
                     </svg>
                 </button>
             </div>
-        </div>
+        </div> */}
       <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
           <DonasiaIcon />

@@ -13,9 +13,9 @@ export default function Home() {
     <div className="flex flex-col min-h-[calc(100vh-var(--header-height,80px))]"> {/* Adjust header height if necessary */}
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 md:py-20 flex-grow">
-        <div className="flex flex-col gap-8 lg:gap-12 items-center"> {/* Changed from grid to flex col */}
+        <div className="flex flex-col gap-8 lg:gap-12 items-start"> {/* Removed items-center */}
           {/* Text part 1 (H2, H1, P) */}
-          <div className="flex flex-col items-center text-center md:items-start md:text-left w-full max-w-xl">
+          <div className="flex flex-col items-start text-left w-full max-w-xl"> {/* Changed items-center text-center to items-start text-left */}
             <h2 className="text-sm md:text-base font-semibold text-primary uppercase tracking-wider mb-2">
               Galang Dana dan Donasi Online Terpercaya
             </h2>
@@ -27,28 +27,14 @@ export default function Home() {
             </p>
           </div>
 
-          {/* Text part 2 (Button, App Badges) - MOVED HERE */}
-          <div className="flex flex-col items-center md:items-start w-full max-w-xl">
+          {/* Text part 2 (Button, App Badges) */}
+          <div className="flex flex-col items-start w-full max-w-xl"> {/* Changed items-center to items-start */}
             <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 text-base md:text-lg py-3 px-8 shadow-md rounded-lg mb-8 transition-transform hover:scale-105">
               <Link href="/donate">
                 Donasi Sekarang
               </Link>
             </Button>
             
-            <div className="mt-4">
-              <p className="text-sm font-medium text-foreground mb-3">Download Aplikasi Donasia</p>
-              <div className="flex flex-wrap gap-3 justify-center md:justify-start">
-                <Link href="/download" aria-label="Get it on Google Play">
-                  <Image src="https://placehold.co/135x40.png?text=Google+Play" alt="Google Play" width={135} height={40} className="rounded" data-ai-hint="google play store" />
-                </Link>
-                <Link href="/download" aria-label="Download on the App Store">
-                  <Image src="https://placehold.co/135x40.png?text=App+Store" alt="App Store" width={135} height={40} className="rounded" data-ai-hint="apple app store" />
-                </Link>
-                <Link href="/download" aria-label="Explore it on AppGallery">
-                  <Image src="https://placehold.co/135x40.png?text=AppGallery" alt="AppGallery" width={135} height={40} className="rounded" data-ai-hint="huawei appgallery" />
-                </Link>
-              </div>
-            </div>
           </div>
 
           {/* Image Gallery Block (now after button and app badges) */}
