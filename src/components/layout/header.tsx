@@ -4,7 +4,7 @@ import { Menu, Search } from 'lucide-react';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from '@/lib/utils';
 
-const AtapkitaIcon = () => (
+const DonasiaIcon = () => (
   <svg width="28" height="20" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-7 md:h-6 md:w-8">
     <path d="M3.33301 10.0003C3.33301 9.53364 3.71634 9.15031 4.18301 9.15031H10.1849C10.7867 9.15031 11.3429 8.73887 11.5391 8.17964L13.2391 3.25314C13.6266 2.13678 15.0399 2.13678 15.4274 3.25314L17.1274 8.17964C17.3236 8.73887 17.8798 9.15031 18.4816 9.15031H20.6663C21.133 9.15031 21.5163 9.53364 21.5163 10.0003V13.3336C21.5163 14.2591 20.7588 15.0166 19.8333 15.0166H5.83301C4.90754 15.0166 4.14967 14.2591 4.14967 13.3336V10.0003Z" fill="hsl(var(--primary))"/>
     <circle cx="14.333" cy="12.3336" r="3.33333" fill="#FFD700"/>
@@ -17,7 +17,7 @@ export default function Header() {
     { href: "/", label: "Beranda" },
     { href: "/donate", label: "Donasi" },
     { href: "/galang-dana", label: "Galang Dana" },
-    { href: "/download", label: "Download" },
+    { href: "/download", label: "Download App" },
     { href: "/tentang-kami", label: "Tentang Kami" },
   ];
 
@@ -25,10 +25,10 @@ export default function Header() {
     <header className="bg-background text-foreground shadow-sm sticky top-0 z-50 border-b">
       <div className="container mx-auto px-4 py-3 md:py-4 flex justify-between items-center">
         <Link href="/" className="flex items-center gap-2">
-          <AtapkitaIcon />
+          <DonasiaIcon />
           <span className="text-xl md:text-2xl font-bold">
-            <span className="text-primary">atap</span>
-            <span className="text-primary/80">kita.com</span>
+            <span className="text-primary">donasia</span>
+            <span className="text-primary/80">.com</span>
           </span>
         </Link>
         
@@ -60,10 +60,10 @@ export default function Header() {
               <SheetContent side="right" className="bg-background w-[250px] sm:w-[300px]">
                 <SheetHeader className="mb-6 border-b pb-4">
                    <Link href="/" className="flex items-center gap-2 mb-2">
-                    <AtapkitaIcon />
+                    <DonasiaIcon />
                     <span className="text-xl font-bold">
-                      <span className="text-primary">atap</span>
-                      <span className="text-primary/80">kita.com</span>
+                      <span className="text-primary">donasia</span>
+                      <span className="text-primary/80">.com</span>
                     </span>
                   </Link>
                   <SheetTitle className="sr-only">Menu Utama</SheetTitle>

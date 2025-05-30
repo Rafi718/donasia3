@@ -10,7 +10,7 @@ const donationTiers = [
     amount: 50000,
     impact: "Menyediakan 5 porsi makanan bergizi untuk anak yatim.",
     icon: <Gift className="h-10 w-10 text-accent" />,
-    bgColorClass: "bg-green-50 dark:bg-green-900/20", // Adjusted for dark mode
+    bgColorClass: "bg-green-50 dark:bg-green-900/20",
   },
   {
     id: 2,
@@ -18,7 +18,7 @@ const donationTiers = [
     amount: 150000,
     impact: "Memberikan 1 paket buku dan alat tulis untuk siswa kurang mampu.",
     icon: <HandHeart className="h-10 w-10 text-accent" />,
-    bgColorClass: "bg-blue-50 dark:bg-blue-900/20", // Adjusted for dark mode
+    bgColorClass: "bg-blue-50 dark:bg-blue-900/20",
   },
   {
     id: 3,
@@ -26,7 +26,7 @@ const donationTiers = [
     amount: 500000,
     impact: "Membantu biaya operasional 1 hari untuk rumah singgah.",
     icon: <ShieldCheck className="h-10 w-10 text-accent" />,
-    bgColorClass: "bg-yellow-50 dark:bg-yellow-900/20", // Adjusted for dark mode
+    bgColorClass: "bg-yellow-50 dark:bg-yellow-900/20",
   },
    {
     id: 4,
@@ -34,10 +34,12 @@ const donationTiers = [
     amount: 1000000,
     impact: "Memberikan beasiswa pendidikan selama 1 bulan untuk 1 anak.",
     icon: <Smile className="h-10 w-10 text-accent" />,
-    bgColorClass: "bg-purple-50 dark:bg-purple-900/20", // Adjusted for dark mode
+    bgColorClass: "bg-purple-50 dark:bg-purple-900/20",
   },
 ];
 
+// This component is currently not used on the main page after the redesign.
+// It is kept here for potential future use.
 export default function DonationTiers() {
   return (
     <section id="donation-tiers" className="py-12 md:py-16 bg-muted/30">

@@ -11,9 +11,9 @@ export default function DonatePage() {
           <div className="mx-auto mb-4 p-4 bg-accent/20 rounded-full inline-block">
             <Gift className="h-12 w-12 text-accent" />
           </div>
-          <CardTitle className="text-3xl font-bold text-primary">Halaman Donasi</CardTitle>
+          <CardTitle className="text-3xl font-bold text-primary">Halaman Donasi Donasia.com</CardTitle>
           <CardDescription className="text-muted-foreground">
-            Terima kasih atas niat baik Anda untuk berdonasi.
+            Terima kasih atas niat baik Anda untuk berdonasi melalui Donasia.com.
           </CardDescription>
         </CardHeader>
         <CardContent>
@@ -21,7 +21,7 @@ export default function DonatePage() {
             Saat ini, halaman donasi sedang dalam pengembangan. Kami akan segera menghadirkannya untuk Anda.
           </p>
           <p className="mb-6 text-foreground">
-            Untuk informasi lebih lanjut atau jika Anda ingin berdonasi melalui metode lain, silakan hubungi kami di <a href="mailto:info@atapkita.com" className="text-primary hover:underline">info@atapkita.com</a>.
+            Untuk informasi lebih lanjut atau jika Anda ingin berdonasi melalui metode lain, silakan hubungi kami di <a href="mailto:info@donasia.com" className="text-primary hover:underline">info@donasia.com</a>.
           </p>
           <Button asChild className="w-full bg-primary text-primary-foreground hover:bg-primary/90">
             <Link href="/">Kembali ke Beranda</Link>

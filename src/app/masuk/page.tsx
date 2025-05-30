@@ -9,9 +9,9 @@ export default function MasukPage() {
     <div className="container mx-auto px-4 py-12 md:py-16 flex items-center justify-center min-h-[calc(100vh-200px)]">
       <Card className="w-full max-w-md shadow-xl">
         <CardHeader className="text-center">
-          <CardTitle className="text-3xl font-bold text-primary">Masuk Akun</CardTitle>
+          <CardTitle className="text-3xl font-bold text-primary">Masuk Akun Donasia.com</CardTitle>
           <CardDescription>
-            Selamat datang kembali! Silakan masuk ke akun Anda.
+            Selamat datang kembali! Silakan masuk ke akun Donasia Anda.
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">

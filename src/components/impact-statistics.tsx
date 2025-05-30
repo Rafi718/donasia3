@@ -32,11 +32,13 @@ const stats = [
   }
 ];
 
+// This component is currently not used on the main page after the redesign.
+// It is kept here for potential future use.
 export default function ImpactStatistics() {
   return (
     <section id="impact-statistics" className="py-12 md:py-16 bg-secondary/30">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-primary">Dampak Nyata Donasi Anda</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-primary">Dampak Nyata Donasi Anda di Donasia.com</h2>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
           {stats.map((stat) => (
             <Card key={stat.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300 text-center group">

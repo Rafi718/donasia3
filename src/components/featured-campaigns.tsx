@@ -4,7 +4,8 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
 import { ChevronRight } from 'lucide-react';
 
-// Simulate a carousel effect with a single featured campaign or a few static ones
+// This component is likely to be replaced or heavily modified.
+// Kept for reference or potential future use in a different context.
 const campaigns = [
   {
     id: 1,
@@ -27,15 +28,12 @@ const campaigns = [
 ];
 
 export default function FeaturedCampaigns() {
-  // For simplicity, we'll display the first campaign as a large banner
-  // and others as smaller cards if needed, or cycle through them.
-  // Here, we focus on one main banner.
   const featuredCampaign = campaigns[0];
 
   return (
     <section id="featured-campaigns" className="py-12 md:py-16 bg-background">
       <div className="container mx-auto px-4">
-        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-primary">Kampanye Unggulan</h2>
+        <h2 className="text-3xl md:text-4xl font-bold text-center mb-8 md:mb-12 text-primary">Kampanye Unggulan Donasia.com</h2>
         <Card className="overflow-hidden shadow-xl hover:shadow-2xl transition-shadow duration-300 group">
           <div className="md:flex">
             <div className="md:w-1/2 relative h-64 md:h-auto">
@@ -78,14 +76,13 @@ export default function FeaturedCampaigns() {
           </div>
         </Card>
 
-        {/* Optional: Display other campaigns as smaller cards */}
         {campaigns.length > 1 && (
           <div className="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {campaigns.slice(1).map(campaign => (
               <Card key={campaign.id} className="shadow-lg hover:shadow-xl transition-shadow duration-300">
                 <div className="relative h-48 w-full">
                    <Image
-                    src={campaign.imageUrl.replace("1200x500", "600x400")} // smaller image
+                    src={campaign.imageUrl.replace("1200x500", "600x400")} 
                     alt={campaign.title}
                     fill
                     style={{ objectFit: 'cover' }}

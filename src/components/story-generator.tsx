@@ -19,6 +19,8 @@ const formSchema = z.object({
 
 type FormData = z.infer<typeof formSchema>;
 
+// This component is currently not used on the main page after the redesign.
+// It is kept here for potential future use.
 export default function StoryGenerator() {
   const [generatedStories, setGeneratedStories] = useState<string[] | null>(null);
   const [isLoading, setIsLoading] = useState(false);
@@ -89,7 +91,7 @@ export default function StoryGenerator() {
             <div className="inline-block p-3 bg-primary/10 rounded-full mb-3 mx-auto">
              <Wand2 className="h-10 w-10 text-primary" />
             </div>
-            <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Pembuat Cerita Donasi</CardTitle>
+            <CardTitle className="text-2xl md:text-3xl font-bold text-primary">Pembuat Cerita Donasi Donasia.com</CardTitle>
             <CardDescription className="text-muted-foreground">
               Buat narasi kampanye yang menarik dengan bantuan AI. Masukkan beberapa fakta kunci, dan kami akan hasilkan cerita untuk Anda.
             </CardDescription>

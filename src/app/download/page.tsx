@@ -5,9 +5,9 @@ import Link from 'next/link';
 export default function DownloadPage() {
   return (
     <div className="container mx-auto px-4 py-12 md:py-16 flex flex-col items-center justify-center min-h-[calc(100vh-200px)] text-center">
-      <h1 className="text-4xl font-bold mb-6 text-primary">Download Aplikasi Atapkita</h1>
+      <h1 className="text-4xl font-bold mb-6 text-primary">Download Aplikasi Donasia</h1>
       <p className="text-lg text-muted-foreground mb-8 max-w-xl">
-        Dapatkan kemudahan berdonasi dan menggalang dana langsung dari genggaman Anda. Unduh aplikasi Atapkita sekarang!
+        Dapatkan kemudahan berdonasi dan menggalang dana langsung dari genggaman Anda. Unduh aplikasi Donasia sekarang!
       </p>
       <div className="flex flex-col sm:flex-row gap-4 mb-12">
         <Link href="#" aria-label="Get it on Google Play">

@@ -17,8 +17,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: 'Atapkita.com - Galang Dana dan Donasi Online Terbesar',
-  description: 'Platform galang dana dan donasi online. Kita Mereka Berkumpul di Satu #Atapkita.',
+  title: 'Donasia.com - Galang Dana dan Donasi Online Terpercaya',
+  description: 'Platform galang dana dan donasi online. Bersama Donasia.com, wujudkan perubahan positif.',
   icons: {
     icon: '/favicon.ico', 
   },
