@@ -1,5 +1,6 @@
+
 import Link from 'next/link';
-import { Facebook, Twitter, Instagram, Youtube } from 'lucide-react';
+import { Facebook, Twitter, Instagram, Youtube, Shield } from 'lucide-react';
 
 const DonasiaIconSmall = () => (
   <svg width="24" height="18" viewBox="0 0 28 20" fill="none" xmlns="http://www.w3.org/2000/svg" className="h-5 w-auto">
@@ -44,12 +45,20 @@ export default function Footer() {
           </div>
           <div>
             <h3 className="font-semibold text-foreground mb-3">Ikuti Kami</h3>
-            <div className="flex space-x-4">
+            <div className="flex space-x-4 mb-4">
               <Link href="#" aria-label="Facebook" className="text-muted-foreground hover:text-primary"><Facebook size={20} /></Link>
               <Link href="#" aria-label="Twitter" className="text-muted-foreground hover:text-primary"><Twitter size={20} /></Link>
               <Link href="#" aria-label="Instagram" className="text-muted-foreground hover:text-primary"><Instagram size={20} /></Link>
               <Link href="#" aria-label="Youtube" className="text-muted-foreground hover:text-primary"><Youtube size={20} /></Link>
             </div>
+            <h3 className="font-semibold text-foreground mb-3">Admin</h3>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <Link href="/admin" className="hover:text-primary flex items-center gap-1">
+                  <Shield size={14} /> Area Admin
+                </Link>
+              </li>
+            </ul>
           </div>
         </div>
         <div className="border-t pt-8 text-center">
