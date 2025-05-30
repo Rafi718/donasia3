@@ -8,6 +8,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Home() {
   return (
+
+    
     <div className="flex flex-col min-h-[calc(100vh-var(--header-height,80px))]"> {/* Adjust header height if necessary */}
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 md:py-20 flex-grow">
@@ -121,7 +123,11 @@ export default function Home() {
             </div>
           </div>
         </div>
+        
       </section>
+
+
+      
 
 
       {/* Scroll to Top Button */}

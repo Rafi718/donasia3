@@ -1,3 +1,4 @@
+
 import Image from 'next/image';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
@@ -5,7 +6,7 @@ import { Card, CardContent, CardFooter, CardHeader, CardTitle } from '@/componen
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { UserCircle2 } from 'lucide-react';
+import { UserCircle2 } from 'lucide-react'; // Changed from UserCircle2 to UserCircle2
 
 type Campaign = {
   id: number;
@@ -26,7 +27,7 @@ const campaigns: Campaign[] = [
     id: 1,
     title: "Bantu Reyhan Pulih Bisa Melihat Bicara Dan Jalan",
     category: "Kesehatan",
-    categoryColor: "bg-orange-100 text-orange-700",
+    categoryColor: "bg-orange-100 text-orange-700 dark:bg-orange-900/30 dark:text-orange-300",
     imageUrl: "https://placehold.co/600x400.png",
     imageHint: "child medical care",
     goal: 50000000,
@@ -38,7 +39,7 @@ const campaigns: Campaign[] = [
     id: 2,
     title: "Tolong Bantu Anak Yatim Piatu Di Panti Asuhan",
     category: "Panti Sosial",
-    categoryColor: "bg-pink-100 text-pink-700",
+    categoryColor: "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
     imageUrl: "https://placehold.co/600x400.png",
     imageHint: "orphanage children",
     goal: 10000000,
@@ -50,7 +51,7 @@ const campaigns: Campaign[] = [
     id: 3,
     title: "Seribu Harapan Untuk Anak-anak Panti Asuhan",
     category: "Panti Sosial",
-    categoryColor: "bg-pink-100 text-pink-700",
+    categoryColor: "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
     imageUrl: "https://placehold.co/600x400.png",
     imageHint: "children hope",
     goal: 20000000,
@@ -62,7 +63,7 @@ const campaigns: Campaign[] = [
     id: 4,
     title: "Tempat Tinggal Panti Asuhan Jernih Balaki Di...",
     category: "Panti Sosial",
-    categoryColor: "bg-pink-100 text-pink-700",
+    categoryColor: "bg-pink-100 text-pink-700 dark:bg-pink-900/30 dark:text-pink-300",
     imageUrl: "https://placehold.co/600x400.png",
     imageHint: "orphanage building",
     goal: 5000000,
@@ -74,7 +75,7 @@ const campaigns: Campaign[] = [
     id: 5,
     title: "Sedekah untuk Pendidikan Anak Dhuafa",
     category: "Sedekah",
-    categoryColor: "bg-yellow-100 text-yellow-700",
+    categoryColor: "bg-yellow-100 text-yellow-700 dark:bg-yellow-900/30 dark:text-yellow-300",
     imageUrl: "https://placehold.co/600x400.png",
     imageHint: "education charity",
     goal: 15000000,
@@ -86,7 +87,7 @@ const campaigns: Campaign[] = [
     id: 6,
     title: "Zakat Maal untuk Kesejahteraan Umat",
     category: "Lainnya",
-    categoryColor: "bg-green-100 text-green-700",
+    categoryColor: "bg-green-100 text-green-700 dark:bg-green-900/30 dark:text-green-300",
     imageUrl: "https://placehold.co/600x400.png",
     imageHint: "zakat charity",
     goal: 100000000,
@@ -98,7 +99,7 @@ const campaigns: Campaign[] = [
 
 export default function PopularCampaigns() {
   return (
-    <section id="popular-campaigns" className="py-12 md:py-20 bg-muted/30">
+    <section id="popular-campaigns" className="py-12 md:py-20 bg-muted/30 dark:bg-muted/10">
       <div className="container mx-auto px-4">
         <div className="text-center mb-10 md:mb-12">
             <p className="text-sm font-semibold text-primary uppercase tracking-wider mb-1">Bantu Mereka</p>
@@ -109,29 +110,31 @@ export default function PopularCampaigns() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 md:gap-8">
           {campaigns.map((campaign) => (
-            <Card key={campaign.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl border">
+            <Card key={campaign.id} className="flex flex-col overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 rounded-xl border bg-card">
               <div className="relative aspect-[4/3] w-full">
-                <Image
-                  src={campaign.imageUrl}
-                  alt={campaign.title}
-                  fill
-                  style={{ objectFit: 'cover' }}
-                  className="rounded-t-xl"
-                  data-ai-hint={campaign.imageHint}
-                />
-                <Badge variant="outline" className={`absolute top-3 left-3 px-2 py-1 text-xs font-semibold rounded-md border-0 ${campaign.categoryColor}`}>
+                <Link href={`/campaign/${campaign.id}`} passHref>
+                  <Image
+                    src={campaign.imageUrl}
+                    alt={campaign.title}
+                    fill
+                    style={{ objectFit: 'cover' }}
+                    className="rounded-t-xl cursor-pointer"
+                    data-ai-hint={campaign.imageHint}
+                  />
+                </Link>
+                <Badge variant="secondary" className={`absolute top-3 left-3 px-2 py-1 text-xs font-semibold rounded-md border-0 ${campaign.categoryColor}`}>
                   {campaign.category}
                 </Badge>
               </div>
               <CardHeader className="p-4 pb-2">
                 <CardTitle className="text-base font-semibold text-foreground leading-tight line-clamp-2 h-10">
-                  <Link href={`/donate?campaign=${campaign.id}`} className="hover:text-primary transition-colors">
+                  <Link href={`/campaign/${campaign.id}`} className="hover:text-primary transition-colors">
                     {campaign.title}
                   </Link>
                 </CardTitle>
               </CardHeader>
               <CardContent className="p-4 pt-0 flex-grow">
-                <Progress value={(campaign.raised / campaign.goal) * 100} className="h-2 mb-3 rounded-full" />
+                <Progress value={(campaign.raised / campaign.goal) * 100} className="h-2 mb-3 rounded-full bg-muted" indicatorClassName="bg-accent" />
                 <div className="flex justify-between text-xs text-muted-foreground mb-3">
                   <div>
                     <p className="font-semibold text-sm text-foreground">Rp {campaign.raised.toLocaleString('id-ID')}</p>
@@ -159,6 +162,7 @@ export default function PopularCampaigns() {
         </div>
          <div className="text-center mt-12">
             <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90">
+                {/* This link should probably go to a page that lists ALL campaigns, not the general donate page */}
                 <Link href="/donate">Lihat Semua Campaign</Link>
             </Button>
         </div>
@@ -166,3 +170,5 @@ export default function PopularCampaigns() {
     </section>
   );
 }
+
+    
