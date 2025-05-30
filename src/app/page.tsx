@@ -1,8 +1,10 @@
+
 import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 import Link from 'next/link';
-import { ArrowUp } from 'lucide-react';
-import PopularCampaigns from '@/components/popular-campaigns'; // Import PopularCampaigns
+import { ArrowUp, Info, Users } from 'lucide-react';
+import PopularCampaigns from '@/components/popular-campaigns'; 
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 
 export default function Home() {
   return (
@@ -30,13 +32,13 @@ export default function Home() {
             <div className="mt-4">
               <p className="text-sm font-medium text-foreground mb-3">Download Aplikasi Donasia</p>
               <div className="flex flex-wrap gap-3">
-                <Link href="#" aria-label="Get it on Google Play">
+                <Link href="/download" aria-label="Get it on Google Play">
                   <Image src="https://placehold.co/135x40.png?text=Google+Play" alt="Google Play" width={135} height={40} className="rounded" data-ai-hint="google play store" />
                 </Link>
-                <Link href="#" aria-label="Download on the App Store">
+                <Link href="/download" aria-label="Download on the App Store">
                   <Image src="https://placehold.co/135x40.png?text=App+Store" alt="App Store" width={135} height={40} className="rounded" data-ai-hint="apple app store" />
                 </Link>
-                <Link href="#" aria-label="Explore it on AppGallery">
+                <Link href="/download" aria-label="Explore it on AppGallery">
                   <Image src="https://placehold.co/135x40.png?text=AppGallery" alt="AppGallery" width={135} height={40} className="rounded" data-ai-hint="huawei appgallery" />
                 </Link>
               </div>
@@ -85,6 +87,42 @@ export default function Home() {
 
       {/* Popular Campaigns Section */}
       <PopularCampaigns />
+
+      {/* About Us Section */}
+      <section id="about-us-home" className="py-12 md:py-20 bg-background">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="order-last md:order-first">
+              <Image 
+                src="https://placehold.co/600x450.png" 
+                alt="Tim Donasia.com berdiskusi" 
+                width={600} 
+                height={450} 
+                className="rounded-xl shadow-xl object-cover w-full"
+                data-ai-hint="team discussion"
+              />
+            </div>
+            <div className="flex flex-col items-start text-left">
+              <p className="text-sm font-semibold text-accent uppercase tracking-wider mb-1">Tentang Kami</p>
+              <h2 className="text-3xl md:text-4xl font-extrabold text-foreground mb-4">
+                Mengenal <span className="text-primary">Donasia.com</span> Lebih Dekat
+              </h2>
+              <p className="text-base md:text-lg text-muted-foreground mb-6">
+                Donasia.com adalah platform yang menghubungkan kebaikan hati para donatur dengan mereka yang membutuhkan. Kami percaya setiap individu memiliki kekuatan untuk membuat perubahan positif, sekecil apapun kontribusinya.
+              </p>
+              <p className="text-base md:text-lg text-muted-foreground mb-8">
+                Visi kami adalah menciptakan ekosistem gotong royong digital yang transparan, aman, dan mudah diakses.
+              </p>
+              <Button size="lg" asChild className="bg-primary text-primary-foreground hover:bg-primary/90 text-base md:text-lg py-3 px-8 shadow-md rounded-lg transition-transform hover:scale-105">
+                <Link href="/tentang-kami">
+                  Baca Selengkapnya <Info className="ml-2 h-5 w-5" />
+                </Link>
+              </Button>
+            </div>
+          </div>
+        </div>
+      </section>
+
 
       {/* Scroll to Top Button */}
       <Link href="#top" className="fixed bottom-6 right-6 bg-primary text-primary-foreground p-3 rounded-full shadow-lg hover:bg-primary/90 transition-all z-50">
