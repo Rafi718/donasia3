@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="id" id="top">
-      <body className={cn(geistSans.variable, geistMono.variable, "antialiased flex flex-col min-h-screen bg-background")}>
+      <body className={cn(geistSans.variable, geistMono.variable, "antialiased flex flex-col min-b-screen bg-background")}>
         <Header />
         <main className="flex-grow">
           {children}

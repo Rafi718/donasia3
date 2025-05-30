@@ -52,7 +52,7 @@ export default function Home() {
             {/* Main Image */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[60%] md:w-[280px] lg:w-[320px] h-auto z-10">
               <Image
-                src="https://placehold.co/400x600.png"
+                src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3NDE5ODJ8MHwxfHNlYXJjaHwyfHxkb25hdGlvbnxlbnwwfHx8fDE3NDg2MDQ0MjF8MA&ixlib=rb-4.1.0&q=80&w=1080"
                 alt="Anak tersenyum menerima bantuan"
                 width={400}
                 height={600}
