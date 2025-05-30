@@ -2,7 +2,7 @@
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import Link from 'next/link';
-import { ShieldCheck, LayoutDashboard } from 'lucide-react';
+import { ShieldCheck, LayoutDashboard, ListChecks, Users, Settings, BarChart3 } from 'lucide-react';
 
 export default function AdminPage() {
   return (
@@ -18,9 +18,6 @@ export default function AdminPage() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-6">
-          <p className="text-muted-foreground">
-            Fitur admin spesifik (seperti manajemen kampanye, pengguna, dll.) dapat ditambahkan di sini.
-          </p>
           <div className="p-4 bg-destructive/10 border border-destructive/30 rounded-md text-destructive dark:text-red-400">
             <div className="flex items-center justify-center gap-2">
               <ShieldCheck size={20} />
@@ -32,17 +29,23 @@ export default function AdminPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4 pt-4">
-            <Button variant="outline" className="w-full">
-              Kelola Kampanye (Placeholder)
+            <Button variant="outline" className="w-full" asChild>
+              <Link href="/admin/campaigns">
+                <ListChecks className="mr-2 h-5 w-5" />
+                Kelola Kampanye
+              </Link>
             </Button>
-            <Button variant="outline" className="w-full">
-              Kelola Pengguna (Placeholder)
+            <Button variant="outline" className="w-full" disabled>
+              <Users className="mr-2 h-5 w-5" />
+              Kelola Pengguna (Segera Hadir)
             </Button>
-            <Button variant="outline" className="w-full">
-              Pengaturan Situs (Placeholder)
+            <Button variant="outline" className="w-full" disabled>
+              <Settings className="mr-2 h-5 w-5" />
+              Pengaturan Situs (Segera Hadir)
             </Button>
-            <Button variant="outline" className="w-full">
-              Lihat Laporan (Placeholder)
+            <Button variant="outline" className="w-full" disabled>
+              <BarChart3 className="mr-2 h-5 w-5" />
+              Lihat Laporan (Segera Hadir)
             </Button>
           </div>
 
@@ -56,4 +59,3 @@ export default function AdminPage() {
     </div>
   );
 }
-
