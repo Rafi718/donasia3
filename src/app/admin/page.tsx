@@ -1,6 +1,6 @@
 
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle, CardFooter } from '@/components/ui/card';
 import Link from 'next/link';
 import { ShieldCheck, LayoutDashboard } from 'lucide-react';
 
@@ -56,3 +56,4 @@ export default function AdminPage() {
     </div>
   );
 }
+
