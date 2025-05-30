@@ -13,9 +13,9 @@ export default function Home() {
     <div className="flex flex-col min-h-[calc(100vh-var(--header-height,80px))]"> {/* Adjust header height if necessary */}
       {/* Hero Section */}
       <section className="container mx-auto px-4 py-12 md:py-20 flex-grow">
-        <div className="grid md:grid-cols-2 gap-8 lg:gap-16 items-center">
-          {/* Left Column: Text Content */}
-          <div className="flex flex-col items-start text-left">
+        <div className="flex flex-col gap-8 lg:gap-12 items-center"> {/* Changed from grid to flex col */}
+          {/* Text part 1 (H2, H1, P) */}
+          <div className="flex flex-col items-center text-center md:items-start md:text-left w-full max-w-xl">
             <h2 className="text-sm md:text-base font-semibold text-primary uppercase tracking-wider mb-2">
               Galang Dana dan Donasi Online Terpercaya
             </h2>
@@ -25,30 +25,10 @@ export default function Home() {
             <p className="text-base md:text-lg text-muted-foreground mb-8 max-w-lg">
               Galang dana dan donasi online kini semakin mudah dilakukan dimanapun dan kapanpun untuk mereka yang membutuhkan.
             </p>
-            <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 text-base md:text-lg py-3 px-8 shadow-md rounded-lg mb-8 transition-transform hover:scale-105">
-              <Link href="/donate">
-                Donasi Sekarang
-              </Link>
-            </Button>
-            
-            <div className="mt-4">
-              <p className="text-sm font-medium text-foreground mb-3">Download Aplikasi Donasia</p>
-              <div className="flex flex-wrap gap-3">
-                <Link href="/download" aria-label="Get it on Google Play">
-                  <Image src="https://placehold.co/135x40.png?text=Google+Play" alt="Google Play" width={135} height={40} className="rounded" data-ai-hint="google play store" />
-                </Link>
-                <Link href="/download" aria-label="Download on the App Store">
-                  <Image src="https://placehold.co/135x40.png?text=App+Store" alt="App Store" width={135} height={40} className="rounded" data-ai-hint="apple app store" />
-                </Link>
-                <Link href="/download" aria-label="Explore it on AppGallery">
-                  <Image src="https://placehold.co/135x40.png?text=AppGallery" alt="AppGallery" width={135} height={40} className="rounded" data-ai-hint="huawei appgallery" />
-                </Link>
-              </div>
-            </div>
           </div>
 
-          {/* Right Column: Image Gallery */}
-          <div className="relative h-[400px] md:h-[550px] lg:h-[600px] order-first md:order-last">
+          {/* Image Gallery Block (moved here, classes adjusted) */}
+          <div className="relative w-full max-w-3xl h-[400px] md:h-[550px] lg:h-[600px]">
             {/* Main Image */}
             <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[60%] md:w-[280px] lg:w-[320px] h-auto z-10">
               <Image
@@ -82,6 +62,30 @@ export default function Home() {
                 className="rounded-3xl shadow-xl object-cover aspect-[16/10]"
                 data-ai-hint="community working together"
               />
+            </div>
+          </div>
+
+          {/* Text part 2 (Button, App Badges) */}
+          <div className="flex flex-col items-center md:items-start w-full max-w-xl">
+            <Button size="lg" asChild className="bg-accent text-accent-foreground hover:bg-accent/90 text-base md:text-lg py-3 px-8 shadow-md rounded-lg mb-8 transition-transform hover:scale-105">
+              <Link href="/donate">
+                Donasi Sekarang
+              </Link>
+            </Button>
+            
+            <div className="mt-4">
+              <p className="text-sm font-medium text-foreground mb-3">Download Aplikasi Donasia</p>
+              <div className="flex flex-wrap gap-3 justify-center md:justify-start">
+                <Link href="/download" aria-label="Get it on Google Play">
+                  <Image src="https://placehold.co/135x40.png?text=Google+Play" alt="Google Play" width={135} height={40} className="rounded" data-ai-hint="google play store" />
+                </Link>
+                <Link href="/download" aria-label="Download on the App Store">
+                  <Image src="https://placehold.co/135x40.png?text=App+Store" alt="App Store" width={135} height={40} className="rounded" data-ai-hint="apple app store" />
+                </Link>
+                <Link href="/download" aria-label="Explore it on AppGallery">
+                  <Image src="https://placehold.co/135x40.png?text=AppGallery" alt="AppGallery" width={135} height={40} className="rounded" data-ai-hint="huawei appgallery" />
+                </Link>
+              </div>
             </div>
           </div>
         </div>
